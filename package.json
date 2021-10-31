@@ -9,6 +9,7 @@
     "startdev": "nodemon --exec babel-node ./bin/www",
     "lint": "./node_modules/.bin/eslint ./bin",
     "pretty": "prettier --write '**/*.{js,json}' '!node_modules/**'",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "postpretty": "yarn lint --fix",
     "test": "nyc --reporter=html --reporter=text --reporter=lcov mocha -r @babel/register"
   },

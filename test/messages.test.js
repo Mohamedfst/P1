@@ -1,4 +1,4 @@
-import { expect, server, BASE_URL } from './setup';
+import { expect, server, BASE_URL } from './setup.js';
 describe('Messages', () => {
   it('get messages page', done => {
     server

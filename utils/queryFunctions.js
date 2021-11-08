@@ -3,6 +3,7 @@ import {
   insertMessages,
   dropMessagesTable,
   createMessageTable,
+  createUserTable,
 } from './queries.js';
 
 export const executeQueryArray = async arr => new Promise(resolve => {
@@ -14,5 +15,5 @@ export const executeQueryArray = async arr => new Promise(resolve => {
 });
 
 export const dropTables = () => executeQueryArray([ dropMessagesTable ]);
-export const createTables = () => executeQueryArray([ createMessageTable ]);
+export const createTables = () => executeQueryArray([ createMessageTable, createUserTable ]);
 export const insertIntoTables = () => executeQueryArray([ insertMessages ]);

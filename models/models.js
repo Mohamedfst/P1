@@ -4,7 +4,10 @@ class Model {
   constructor(table) {
     this.pool = pool;
     this.table = table;
-    this.pool.on('error', (err, client) => `Error, ${err}, on idle client${client}`);
+    this.pool.on(
+      'error',
+      (err, client) => `Error, ${err}, on idle client${client}`
+    );
   }
 
   async select(columns, clause) {
@@ -14,14 +17,13 @@ class Model {
   }
 
   async insertWithReturn(columns, values) {
-  const query = `
+    const query = `
         INSERT INTO ${this.table}(${columns})
         VALUES (${values})
         RETURNING id, ${columns}
     `;
-  return this.pool.query(query);
-}
-
+    return this.pool.query(query);
+  }
 }
 
 export default Model;

@@ -14,3 +14,13 @@ VALUES ('chidimo', 'first message'),
 `;
 
 export const dropMessagesTable = 'DROP TABLE messages';
+
+export const createUserTable = `
+CREATE TABLE IF NOT EXISTS users (
+id UUID PRIMARY KEY,
+email VARCHAR (128) UNIQUE NOT NULL,
+password VARCHAR(128) NOT NULL,
+created_date TIMESTAMPTZ,
+modified_date TIMESTAMPTZ
+)
+`;

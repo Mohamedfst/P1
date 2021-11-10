@@ -13,7 +13,14 @@ VALUES ('chidimo', 'first message'),
       ('orji', 'second message')
 `;
 
+export const insertUser = `
+INSERT INTO users(id, email, password,created_date,modified_date)
+VALUES ('bc96743f-e15c-443a-b6af-6c92f5322cf1', 'keita.momo1@yahoo.fr','it is like that','2021-11-08T22:50:36.547Z','2021-11-08T22:50:36.547Z')
+`;
+
 export const dropMessagesTable = 'DROP TABLE messages';
+
+export const dropUserTable = 'DROP TABLE users';
 
 export const createUserTable = `
 CREATE TABLE IF NOT EXISTS users (

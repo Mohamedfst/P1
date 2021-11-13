@@ -1,5 +1,5 @@
-# Express/Nodejs template
-# initialize the project folder as a git repository
+# Express/Nodejs Backend Project thus far.
+# Click on the blow below icons for CI and Code Climate.
 git init
 [![Build Status](https://app.travis-ci.com/Mohamedfst/P1.svg?branch=master)](https://app.travis-ci.com/Mohamedfst/P1)
 <a href="https://codeclimate.com/github/Mohamedfst/P1/maintainability"><img src="https://api.codeclimate.com/v1/badges/9c48b4284958863787d2/maintainability" /></a>

@@ -33,3 +33,16 @@ it('posts user', (done) => {
       done();
     });
 });
+
+it('Check for login returned infos', (done) => {
+  const data = { email: 'keita.momo1@gmail.com', password: 'New High Point' };
+  server
+    .post(`${BASE_URL}/login`)
+    .send(data)
+    .expect(200)
+    .end((err, res) => {
+      expect(res.status).to.equal(200);
+      expect(res.body).to.have.property('token');
+      done();
+    });
+});

@@ -35,7 +35,7 @@ it('posts user', (done) => {
 });
 
 it('Check for login returned infos', (done) => {
-  const data = { email: 'keita.momo1@gmail.com', password: 'New High Point' };
+  const data = { email: 'keita.momo1@yahoo.com', password: 'testme' };
   server
     .post(`${BASE_URL}/login`)
     .send(data)

@@ -1,4 +1,5 @@
 import { expect, server, BASE_URL } from './setup.js';
+let deleteUserId;
 describe('Users', () => {
   it('get users page', (done) => {
     server
@@ -25,6 +26,7 @@ it('posts user', (done) => {
     .end((err, res) => {
       expect(res.status).to.equal(200);
       expect(res.body.messages).to.be.instanceOf(Array);
+      deleteUserId = res.body.messages.id;
       res.body.messages.forEach((m) => {
         expect(m).to.have.property('id');
         expect(m).to.have.property('email', data.email);
@@ -43,6 +45,17 @@ it('Check for login returned infos', (done) => {
     .end((err, res) => {
       expect(res.status).to.equal(200);
       expect(res.body).to.have.property('token');
+      done();
+    });
+});
+
+it('delete user', (done) => {
+  server
+    .delete(`${BASE_URL}/user/${deleteUserId}`)
+    .expect(200)
+    .end((err, res) => {
+      expect(res.status).to.equal(200);
+      expect(res.body).to.have.property('messages');
       done();
     });
 });

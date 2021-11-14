@@ -65,3 +65,13 @@ export const userLogin = async (req, res) => {
     res.status(200).json({ messages: err.stack });
   }
 };
+
+export const deleteUser = async (req, res) => {
+  const userId = req.params.id;
+  try {
+    const data = await usersModel.delete(userId);
+    res.status(200).json({ messages: data.rows });
+  } catch (err) {
+    res.status(200).json({ messages: err.stack });
+  }
+};

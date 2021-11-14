@@ -16,6 +16,12 @@ class Model {
     return this.pool.query(query);
   }
 
+  async delete(id) {
+    let query = 'DELETE FROM users WHERE id =';
+    if (id) query += `'${id}'`;
+    return this.pool.query(query);
+  }
+
   async insertWithReturn(columns, values) {
     const query = `
         INSERT INTO ${this.table}(${columns})

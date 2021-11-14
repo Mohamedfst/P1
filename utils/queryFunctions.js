@@ -17,10 +17,6 @@ export const executeQueryArray = async (arr) =>
     });
   });
 
-export const dropTables = () =>
-  executeQueryArray([dropMessagesTable, dropUserTable]);
-export const createTables = () =>
-  executeQueryArray([createMessageTable, createUserTable]);
-export const insertIntoTables = () =>
-
-  executeQueryArray([insertMessages, insertUser]);
+export const dropTables = () => executeQueryArray([dropMessagesTable, dropUserTable]);
+export const createTables = () => executeQueryArray([createMessageTable, createUserTable]);
+export const insertIntoTables = () => executeQueryArray([insertMessages, insertUser]);

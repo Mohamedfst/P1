@@ -1,7 +1,7 @@
 import express from 'express';
 import { testEnvironmentVariable } from '../bin/settings.js';
 import { messagesPage, addMessage } from './messages.js';
-import { addUser, usersPage, userLogin } from './users.js';
+import { addUser, usersPage, userLogin, deleteUser } from './users.js';
 import Auth from '../middleware/Auth.js';
 
 const indexRouter = express.Router();
@@ -22,10 +22,13 @@ indexRouter.get('/user', usersPage);
 /* POST Relogin by a user. */
 indexRouter.post('/user/:id', Auth.verifyToken, usersPage);
 
-/* Post a user. */
+/* Post an user. */
 indexRouter.post('/user', addUser);
 
 /* GET home page. */
 indexRouter.post('/login', userLogin);
+
+/* DELETE an user. */
+indexRouter.delete('/user/:id', deleteUser);
 
 export default indexRouter;
